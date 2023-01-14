@@ -1,33 +1,43 @@
 <script>
-export default {
+export default{
   data(){
-    return {
-      message: 'Hello World!'
+    return{
+      message: 'Hello world',
+      isRed: true,
+      color: 'green'
     }
   },
   methods:{
-    reverseMessage(){
-      this.message = this.message.split('').reverse().join('')
+    toggleRed(){
+      this.isRed = !this.isRed
     },
-    notify(){
-      alert('navigation was prevented.')
+    toggleColor(){
+      this.color = this.color === 'green' ? 'blue':'green'
     }
   }
 }
 </script>
 
 <template>
-<h1>{{ message }}</h1>
+<p>
+  <span :title="message">
+    Hello
+  </span>
+</p>
 
-<button @click="reverseMessage">Reverse Message</button>
-<button @click="message += '!'">Append '!'</button>
+<p :class="{red: isRed}" @click="toggleRed">
+  hello 2
+</p>
 
-<a href="https://vuejs.org" @click.prevent="notify">A link with e.preventDefault()</a>
+<p :style="{color}" @click='toggleColor'>
+  hello 3
+</p>
+
 </template>
 
+
 <style>
-button, a{
-  display: block;
-  margin-bottom: 1em;
+.red{
+  color: red;
 }
 </style>
