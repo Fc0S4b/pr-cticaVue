@@ -3,11 +3,8 @@
 </script>
 
 <template>
-<h1>test 2</h1>
+<h1>4-conditionals and loops</h1>
 </template>
 
 
-<style>
-
-</style>
 
